@@ -44,31 +44,38 @@ main {
   gap: var(--spacing-standard);
 }
 
-div > section {
+/* Updated: Use .main-cont > section for direct children */
+.main-cont > section {
   background-color: var(--color-main);
   width: 95%;
   height: 33.33%;
   min-height: 200px;
   border: 2px solid var(--color-text);
   overflow: auto;
-}
-.string{
-text-align: center;
-padding: 20px 0px;
-}
-
-.string-top{
-    display: flex;
-    flex-direction: column;
-    padding: var(--spacing-standard);
-    margin: 5px 0px 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
 }
 
-.string-top > p{
+/* String Section */
+.string {
+  text-align: center;
+  padding: 20px 0px;
+}
+
+.string-top {
+  display: flex;
+  flex-direction: column;
+  padding: var(--spacing-standard);
+  margin: 5px 0px 20px;
+}
+
+.string-top > p {
   color: var(--color-text);
   font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
 }
-.string-display{
+
+.string-display {
   height: 3rem;
   margin-bottom: var(--spacing-standard);
   background-color: var(--color-background);
@@ -76,27 +83,23 @@ padding: 20px 0px;
   color: var(--color-text);
   text-align: center;
 }
-.string-buttons{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: 5px;
-    margin: 20px 0px;
-}
-.string-buttons > *{
-    width: 5rem;
-    height: 30px;
-    background-color: var(--color-accent);
-    color: var(--color-text);
-    border-radius: var(--border-standard);
+
+/* String Input Form */
+.string-input-form {
+  display: flex;
+  gap: 10px;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 1rem;
 }
 
-#string-input{
+#string-input {
   height: 2rem;
   width: 70%;
   text-align: center;
 }
-#enter-btn{
+
+#enter-btn {
   width: 3rem;
   height: 2rem;
   color: var(--color-text);
@@ -104,17 +107,30 @@ padding: 20px 0px;
   border-radius: var(--border-standard);
 }
 
+/* String Buttons */
+.string-buttons {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 5px;
+  margin: 20px 0px;
+}
 
+.string-buttons > button {
+  width: 5rem;
+  height: 30px;
+  background-color: var(--color-accent);
+  color: var(--color-text);
+  border-radius: var(--border-standard);
+}
 
-
-
-
-
-
-
-
-
-
+/* Password Generator */
+.random-password-gen {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
 
 .passwordCard {
   display: flex;
@@ -144,6 +160,7 @@ padding: 20px 0px;
   color: var(--color-text);
   margin-top: 1rem;
 }
+
 #generate-btn {
   background-color: var(--color-accent);
   color: var(--color-text);
@@ -182,7 +199,9 @@ button:hover {
 }
 
 .line {
-  display: flex;
+  display: block;
   height: 2px;
   background-color: #2f3e53;
+  border: none;
+  margin: 1rem 0;
 }

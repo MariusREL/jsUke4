@@ -9,48 +9,47 @@
   </head>
   <body>
     <main>
-      <div class="main-cont section-main">
-        <section class="string">
-          <section class="string-top">
-              <h2 class="string-display">This is a string</h2>
-              <p id="string-para">What you see above you is indeed a string</p>
-          </section>
-          <input placeholder="Do you want to type a new string?" type="text" id="string-input"/>
-          <button id="enter-btn">Yes</button>
-          <section class="string-buttons">
-              <button id="caps-btn">caps</button>
-              <button id="uncaps-btn">uncaps</button>
-              <button id="randomcaps-btn">randomcaps</button>
-              <button id="reverse-btn">reverse</button>
-          </section>
+      <section class="main-cont section-main" aria-label="Main tools">
+        <section class="string" aria-labelledby="string-title">
+          <header class="string-top">
+            <h2 id="string-title" class="string-display">This is a string</h2>
+            <p id="string-para">What you see above you is indeed a string</p>
+          </header>
+          <form class="string-input-form" onsubmit="return false;">
+            <input placeholder="Do you want to type a new string?" type="text" id="string-input" aria-label="Type a new string"/>
+            <button id="enter-btn" type="submit">Yes</button>
+          </form>
+          <nav class="string-buttons" aria-label="String manipulation buttons">
+            <button id="caps-btn">caps</button>
+            <button id="uncaps-btn">uncaps</button>
+            <button id="randomcaps-btn">randomcaps</button>
+            <button id="reverse-btn">reverse</button>
+          </nav>
         </section>
-        <section class="array">This is an array</section>
-        <section class="unit-conv">This is your unit converter</section>
-      </div>
+        <section class="array" aria-label="Array section">This is an array</section>
+        <section class="unit-conv" aria-label="Unit converter">This is your unit converter</section>
+      </section>
 
-      <div class="main-cont section-sub">
-        <section class="random-password-gen">
-          <div class="passwordCard">
-            <div class="pwd-header">
-              <h1 class="generate">Generate a <span class="rndpasswordh1">random password</span></h1>
+      <section class="main-cont section-sub" aria-label="Extra tools">
+        <section class="random-password-gen" aria-labelledby="password-title">
+          <article class="passwordCard">
+            <header class="pwd-header">
+              <h1 id="password-title" class="generate">Generate a <span class="rndpasswordh1">random password</span></h1>
               <p>Never use an insecure password again.</p>
-            </div>
-
+            </header>
             <div class="pwd-controls">
-              <button id="generate-btn">Generate passwords</button>
+              <button id="generate-btn" type="button">Generate passwords</button>
             </div>
-
-            <div class="line"></div>
-
+            <hr class="line" aria-hidden="true"/>
             <div class="generatedpwds">
-              <button class="genpwdbtn" id="generated-pwd1"></button>
-              <button class="genpwdbtn" id="generated-pwd2"></button>
+              <button class="genpwdbtn" id="generated-pwd1" aria-label="Generated password 1"></button>
+              <button class="genpwdbtn" id="generated-pwd2" aria-label="Generated password 2"></button>
             </div>
-          </div>
+          </article>
         </section>
-        <section class="object"> This is an object</section>
-        <section class="comment"></section>
-      </div>
+        <section class="object" aria-label="Object section">This is an object</section>
+        <section class="etch" aria-label="Etch-a-sketch section">etch-a-sketch</section>
+      </section>
     </main>
   </body>
 </html>
