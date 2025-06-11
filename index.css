@@ -1,0 +1,187 @@
+*,
+*::before,
+*::after {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --color-dark: #0d1321;
+  --color-background: #1d2d44;
+  --color-accent: #10b981;
+  --color-text: #ffffff;
+  --color-pwd-bg: #1f2937;
+  --color-main: #273549;
+  --color-text-green: #55f991;
+  --spacing-standard: 10px;
+  --border-standard: 4px;
+}
+
+body {
+  background-color: var(--color-dark);
+  height: 100svh;
+  margin: 0px 15% 0px 15%;
+}
+
+main {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-flow: row;
+  justify-content: center;
+  align-items: center;
+}
+
+.main-cont {
+  background-color: var(--color-background);
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: var(--spacing-standard);
+}
+
+div > section {
+  background-color: var(--color-main);
+  width: 95%;
+  height: 33.33%;
+  min-height: 200px;
+  border: 2px solid var(--color-text);
+  overflow: auto;
+}
+.string{
+text-align: center;
+padding: 20px 0px;
+}
+
+.string-top{
+    display: flex;
+    flex-direction: column;
+    padding: var(--spacing-standard);
+    margin: 5px 0px 20px;
+}
+
+.string-top > p{
+  color: var(--color-text);
+  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+.string-display{
+    background-color: var(--color-background);
+    height: 3rem;
+    padding: var(--spacing-standard);
+    text-align: center;
+    color: var(--color-text);
+}
+.string-buttons{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 5px;
+    margin: 20px 0px;
+}
+.string-buttons > *{
+    width: 5rem;
+    height: 30px;
+    background-color: var(--color-accent);
+    color: var(--color-text);
+    border-radius: var(--border-standard);
+}
+
+#string-input{
+  height: 2rem;
+  width: 70%;
+  text-align: center;
+}
+#enter-btn{
+  width: 3rem;
+  height: 2rem;
+  color: var(--color-text);
+  background-color: var(--color-accent);
+  border-radius: var(--border-standard);
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+.passwordCard {
+  display: flex;
+  flex-direction: column;
+  background-color: var(--color-main);
+  gap: 1rem;
+  padding: 1rem;
+  height: 100%;
+  justify-content: center;
+}
+
+.pwd-header {
+  margin-bottom: 0.5rem;
+}
+
+.generate {
+  color: var(--color-text);
+  font-size: clamp(1.5rem, 2vw, 2.1rem);
+}
+
+.rndpasswordh1 {
+  color: #4adf86;
+  font-size: clamp(1.4rem, 2vw, 2rem);
+}
+
+.pwd-header > p {
+  color: var(--color-text);
+  margin-top: 1rem;
+}
+#generate-btn {
+  background-color: var(--color-accent);
+  color: var(--color-text);
+  width: 40%;
+  min-height: 2.5rem;
+  padding: 0.5rem 1rem;
+  border-radius: var(--border-standard);
+  line-height: 1.2;
+}
+
+.generatedpwds {
+  display: flex;
+  gap: 30px;
+}
+
+.generatedpwds > button {
+  border-radius: 6px;
+  width: 50%;
+  min-height: 1.7rem;
+  border: none;
+  transition: 1s;
+}
+
+.genpwdbtn {
+  background-color: var(--color-background);
+  color: var(--color-text-green);
+}
+
+.genpwdbtn:hover {
+  background-color: #314d74;
+}
+
+button:hover {
+  border: 2px solid var(--color-accent);
+  cursor: pointer;
+}
+
+.line {
+  display: flex;
+  height: 2px;
+  background-color: #2f3e53;
+}
