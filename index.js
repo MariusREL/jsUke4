@@ -36,6 +36,7 @@ stringInput.addEventListener("keypress", (e) => {
 capsBtn.addEventListener("click", () =>{
     stringDisplay.textContent = stringDisplay.textContent.toLocaleUpperCase()
 })
+
 uncapsBtn.addEventListener("click", () =>{
     stringDisplay.textContent = stringDisplay.textContent.toLowerCase()
 })
@@ -54,8 +55,6 @@ reverseBtn.addEventListener("click", () => {
     .reverse()
     .join("")
 })
-
-
 
 generateButton.addEventListener("click", function() {
     // have to define the empty strings outside of the for loop to be able to concatenate inside the forloop
