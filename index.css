@@ -44,23 +44,23 @@ main {
   gap: var(--spacing-standard);
 }
 
-/* Updated: Use .main-cont > section for direct children */
+
 .main-cont > section {
   background-color: var(--color-main);
   width: 95%;
   height: 33.33%;
   min-height: 200px;
-  border: 2px solid var(--color-text);
+  border: 2px solid white;
   overflow: auto;
   display: flex;
-  flex-direction: column;
-  justify-content: flex-start;
+
 }
 
-/* String Section */
 .string {
   text-align: center;
   padding: 20px 0px;
+  flex-direction: column;
+  justify-content: flex-start;
 }
 
 .string-top {
@@ -116,7 +116,7 @@ main {
   margin: 20px 0px;
 }
 
-.string-buttons > button {
+.string-buttons > button, aside > button {
   width: 5rem;
   height: 30px;
   background-color: var(--color-accent);
@@ -205,3 +205,45 @@ button:hover {
   border: none;
   margin: 1rem 0;
 }
+.array-cont{
+  flex-direction: row;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.array-section{
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+.array-cont{
+  margin: 0px 5px 0px 5px;
+  display: flex;
+  flex-direction: column;
+  justify-content: start;
+  align-items: flex-start;
+  background-color: var(--color-pwd-bg);
+  width: 60%;
+  height: 80%;
+  padding: 5% 5% 7%;
+  gap: 5px;
+}
+.array-list > li{
+  color: var(--color-text);
+  font-family:Arial, Helvetica, sans-serif ;
+}
+
+.array-controls {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  align-items: center;
+  width: 40%;
+  height: 80%;
+}
+.array-controls > input{
+  height: 1.6rem;
+  text-align: center;
+}
+
