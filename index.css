@@ -69,11 +69,12 @@ padding: 20px 0px;
   font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
 }
 .string-display{
-    background-color: var(--color-background);
-    height: 3rem;
-    padding: var(--spacing-standard);
-    text-align: center;
-    color: var(--color-text);
+  height: 3rem;
+  margin-bottom: var(--spacing-standard);
+  background-color: var(--color-background);
+  padding: var(--spacing-standard);
+  color: var(--color-text);
+  text-align: center;
 }
 .string-buttons{
     display: flex;
