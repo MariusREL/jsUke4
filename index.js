@@ -1,6 +1,6 @@
-const characters = ["A","B","C","D","E","F","G","H","I","J","K","L","M","N","O","P","Q","R","S","T","U","V","W","X","Y","Z","a","b","c","d","e","f","g","h","i","j","k","l","m","n","o","p","q","r","s","t","u","v","w","x","y","z", "0", "1", "2", "3", "4", "5", "6", "7", "8", "9","~","`","!","@","#","$","%","^","&","*","(",")","_","-","+","=","{","[","}","]",",","|",":",";","<",">",".","?",
+const CHARACTERS = ["A","B","C","D","E","F","G","H","I","J","K","L","M","N","O","P","Q","R","S","T","U","V","W","X","Y","Z","a","b","c","d","e","f","g","h","i","j","k","l","m","n","o","p","q","r","s","t","u","v","w","x","y","z", "0", "1", "2", "3", "4", "5", "6", "7", "8", "9","~","`","!","@","#","$","%","^","&","*","(",")","_","-","+","=","{","[","}","]",",","|",":",";","<",">",".","?",
 "/"];
-
+// Samler elementene i et object for systematikk og lettere leselighet
 const elements = {
     
     string: {
@@ -33,6 +33,7 @@ const elements = {
     
 };
 
+// Gjor legg til tekst funksjonell i string-seksjonen, koden snakker litt for seg selv.
 function userStringSubmit(){
     if (elements.string.input.value !== "" && elements.string.input.value.length <= 27 ){
     elements.string.display.textContent = elements.string.input.value
@@ -43,7 +44,7 @@ function userStringSubmit(){
         elements.string.para.textContent = "You gotta type a string here or this game doesn't work"
     } else  {elements.string.para.textContent = "That string is faar too long"}
 }
-
+// gir funksjon til enterknappen, inkluderer muligheten til aa trykke enter for submit og fjerner defaultfunksjonen som gaar til neste linje
 elements.string.buttons.enter.addEventListener("click", userStringSubmit)
 
 elements.string.input.addEventListener("keypress", (e) => {
@@ -53,6 +54,8 @@ elements.string.input.addEventListener("keypress", (e) => {
     }
 })
 
+
+// funksjoner for knappene i stringseksjon
 elements.string.buttons.caps.addEventListener("click", () =>{
     elements.string.display.textContent = elements.string.display.textContent.toLocaleUpperCase()
 })
@@ -83,8 +86,8 @@ elements.password.generate.addEventListener("click", function() {
 
     //  i runs through the bracketed code 15 times 
     for (let i = 0; i < 15; i++) {
-        randomPwdString1 += characters[Math.floor(Math.random()*characters.length)]
-        randomPwdString2 += characters[Math.floor(Math.random()*characters.length)]
+        randomPwdString1 += CHARACTERS[Math.floor(Math.random()*CHARACTERS.length)]
+        randomPwdString2 += CHARACTERS[Math.floor(Math.random()*CHARACTERS.length)]
     }
 
     elements.password.output1.textContent = randomPwdString1
