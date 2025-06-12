@@ -1,5 +1,9 @@
+// const { createElement } = require("react");
+
 const CHARACTERS = ["A","B","C","D","E","F","G","H","I","J","K","L","M","N","O","P","Q","R","S","T","U","V","W","X","Y","Z","a","b","c","d","e","f","g","h","i","j","k","l","m","n","o","p","q","r","s","t","u","v","w","x","y","z", "0", "1", "2", "3", "4", "5", "6", "7", "8", "9","~","`","!","@","#","$","%","^","&","*","(",")","_","-","+","=","{","[","}","]",",","|",":",";","<",">",".","?",
 "/"];
+
+const sampleArray = ["Emil", "og", "Shrek", "Bor", "i", "en", "sump", "sammen"]
 // Samler elementene i et object for systematikk og lettere leselighet
 const elements = {
     
@@ -22,6 +26,7 @@ const elements = {
     },
     
     array: {
+        arrayList: document.querySelector(".array-list"),
         itemInput: document.querySelector("#array-item-input"),
         numInput: document.querySelector("#array-num-input"),
         buttons: {
@@ -105,3 +110,12 @@ elements.password.generate.addEventListener("click", function() {
     )
 
 })
+
+// add sampleArray items into li items in .array-li
+
+for (const item of sampleArray){
+    const list = document.createElement("li")
+    list.innerText = item;
+    elements.array.arrayList.appendChild(list)
+}
+
