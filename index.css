@@ -211,9 +211,8 @@ button:hover {
   justify-content: center;
   align-items: center;
   background-image:url("./images/ShrekEmilBoss.png");
-  background-position: center;
-  background-size: 200%;
   background-position: 70%;
+  background-size: cover
 }
 .array-section{
   display: flex;
@@ -258,4 +257,6 @@ button:hover {
 
 .etch{
   background-image: url("./images/puppies.gif");
+  background-repeat: no-repeat;
+  background-size: cover;
 }

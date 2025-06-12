@@ -32,7 +32,8 @@ const elements = {
         buttons: {
             add: document.querySelector("#array-add-btn"),
             remove: document.querySelector("#array-remove-btn"),
-            reverse: document.querySelector("#array-reverse-btn")
+            reverse: document.querySelector("#array-reverse-btn"),
+            clear: document.querySelector("#array-clear-btn")
         }
     },
     
@@ -112,10 +113,30 @@ elements.password.generate.addEventListener("click", function() {
 })
 
 // add sampleArray items into li items in .array-li
-
+function updateArray(){
+    elements.array.arrayList.textContent = ""
 for (const item of sampleArray){
     const list = document.createElement("li")
     list.innerText = item;
     elements.array.arrayList.appendChild(list)
-}
+}}
+updateArray()
 
+
+
+
+elements.array.buttons.reverse.addEventListener("click", function(){
+    const items = Array.from(elements.array.arrayList.children);
+    // Remove all items from the list
+    elements.array.arrayList.innerHTML = '';
+    // Add them back in reverse order
+    items.reverse().forEach(item => {
+        elements.array.arrayList.appendChild(item);
+    });
+});
+
+elements.array.buttons.clear.addEventListener("click", () =>{ elements.array.arrayList.textContent = ""}
+
+
+
+)
