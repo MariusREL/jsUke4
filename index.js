@@ -135,8 +135,18 @@ elements.array.buttons.reverse.addEventListener("click", function(){
     });
 });
 
-elements.array.buttons.clear.addEventListener("click", () =>{ elements.array.arrayList.textContent = ""}
+elements.array.buttons.clear.addEventListener("click", (e) => {
+if(e.shiftKey){
+    for (const item of sampleArray){
+    const list = document.createElement("li")
+    list.innerText = item;
+    elements.array.arrayList.appendChild(list)};
+    updateArray() } 
+    else {
+     elements.array.arrayList.textContent = ""}
+    })
 
 
 
-)
+
+
