@@ -256,7 +256,8 @@ button:hover {
 
 
 .etch{
-  background-image: url("./images/puppies.gif");
+  background-image: url("./images/judi-neumeyer-ECjHeJtRznQ-unsplash.jpg");
   background-repeat: no-repeat;
   background-size: cover;
+  background-position-y: 35%;
 }

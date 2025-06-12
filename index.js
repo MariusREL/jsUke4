@@ -28,7 +28,7 @@ const elements = {
     array: {
         arrayList: document.querySelector(".array-list"),
         itemInput: document.querySelector("#array-item-input"),
-        numInput: document.querySelector("#array-num-input"),
+        selectEl: document.querySelector("#firstOrLast"),
         buttons: {
             add: document.querySelector("#array-add-btn"),
             remove: document.querySelector("#array-remove-btn"),
@@ -112,7 +112,7 @@ elements.password.generate.addEventListener("click", function() {
 
 })
 
-// add sampleArray items into li items in .array-li
+
 function updateArray(){
     elements.array.arrayList.textContent = ""
 for (const item of sampleArray){
@@ -123,30 +123,59 @@ for (const item of sampleArray){
 updateArray()
 
 
+elements.array.buttons.add.addEventListener("click", function(){
+    const userInputValue = elements.array.itemInput.value;
+    if (sampleArray.length >= 12) {
+        return;
+    }
+
+    if (elements.array.selectEl.value === "first-element") {
+        sampleArray.unshift(userInputValue);
+    } else {
+        sampleArray.push(userInputValue);
+    }
+    elements.array.itemInput.value = "";
+    updateArray();
+});
+
+
+elements.array.buttons.remove.addEventListener("click", function(){
+    const userInputValue = elements.array.itemInput.value;
+    
+    if (userInputValue) {
+        if (sampleArray.indexOf(userInputValue) !== -1) {
+            sampleArray.splice(sampleArray.indexOf(userInputValue), 1);
+        }
+    } else {
+        if (elements.array.selectEl.value === "first-element") {
+            sampleArray.shift();
+        } else {
+            sampleArray.pop();
+        }
+    }
+    
+    elements.array.itemInput.value = "";
+    updateArray();
+});
+
 
 
 elements.array.buttons.reverse.addEventListener("click", function(){
     const items = Array.from(elements.array.arrayList.children);
-    // Remove all items from the list
     elements.array.arrayList.innerHTML = '';
-    // Add them back in reverse order
     items.reverse().forEach(item => {
         elements.array.arrayList.appendChild(item);
     });
 });
 
+
+
 elements.array.buttons.clear.addEventListener("click", (e) => {
-if(e.shiftKey){
-    for (const item of sampleArray){
-    const list = document.createElement("li")
-    list.innerText = item;
-    elements.array.arrayList.appendChild(list)};
-    updateArray() } 
-    else {
-     elements.array.arrayList.textContent = ""}
-    })
-
-
-
-
-
+    if(e.shiftKey){
+        sampleArray.length = 0;
+        sampleArray.push(...["Emil", "og", "Shrek", "Bor", "i", "en", "sump", "sammen"]);
+    } else {
+        sampleArray.length = 0;
+    }
+    updateArray();
+});
