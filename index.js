@@ -86,11 +86,10 @@ elements.string.buttons.reverse.addEventListener("click", () => {
 })
 
 elements.password.generate.addEventListener("click", function() {
-    // have to define the empty strings outside of the for loop to be able to concatenate inside the forloop
+
     let randomPwdString1 = "";
     let randomPwdString2 = "";
 
-    //  i runs through the bracketed code 15 times 
     for (let i = 0; i < 15; i++) {
         randomPwdString1 += CHARACTERS[Math.floor(Math.random()*CHARACTERS.length)]
         randomPwdString2 += CHARACTERS[Math.floor(Math.random()*CHARACTERS.length)]
@@ -112,7 +111,7 @@ elements.password.generate.addEventListener("click", function() {
 
 })
 
-
+// function to update the dom so that the array is kept up to date with changes
 function updateArray(){
     elements.array.arrayList.textContent = ""
 for (const item of sampleArray){
@@ -125,10 +124,11 @@ updateArray()
 
 elements.array.buttons.add.addEventListener("click", function(){
     const userInputValue = elements.array.itemInput.value;
+    // stops the user from making the array too long
     if (sampleArray.length >= 12) {
         return;
     }
-
+// unshifts if first element is chosen in the drop down, pushes if not
     if (elements.array.selectEl.value === "first-element") {
         sampleArray.unshift(userInputValue);
     } else {
@@ -138,7 +138,7 @@ elements.array.buttons.add.addEventListener("click", function(){
     updateArray();
 });
 
-
+// if the user types in a word matching another word in the array it removes that, case sensitive. If not the functions shifts or pops depending on dropdown selected
 elements.array.buttons.remove.addEventListener("click", function(){
     const userInputValue = elements.array.itemInput.value;
     
@@ -159,7 +159,7 @@ elements.array.buttons.remove.addEventListener("click", function(){
 });
 
 
-
+// converts the html list of the children of the OL element(all the li) and converts it into an array so that I can reverse it. Removes everything first then repopulates the whole thing in reverse
 elements.array.buttons.reverse.addEventListener("click", function(){
     const items = Array.from(elements.array.arrayList.children);
     elements.array.arrayList.innerHTML = '';
@@ -169,7 +169,7 @@ elements.array.buttons.reverse.addEventListener("click", function(){
 });
 
 
-
+// clears out the array on normal click, repopulates it on shift-click
 elements.array.buttons.clear.addEventListener("click", (e) => {
     if(e.shiftKey){
         sampleArray.length = 0;
